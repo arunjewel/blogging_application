@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/colors.dart';
+import '../../../core/utils.dart';
+import '../../login_page/screens/login_page.dart';
 import '../widgets/welcome_page_image_card.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -89,6 +91,11 @@ class WelcomeScreen extends StatelessWidget {
                               ),
                             ),
                             const Spacer(),
+                            GestureDetector(
+                              onTap: (){
+                                toPage(context,const LoginPage());
+                              },
+                              child:
                             Container(
                               height: 60,
                               width: 88,
@@ -104,7 +111,7 @@ class WelcomeScreen extends StatelessWidget {
                                   color: backgroundColor,
                                 ),
                               ),
-                            ),
+                            ),),
                           ],
                         ),
                       ),

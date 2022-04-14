@@ -7,6 +7,7 @@ const welcomePageImage1 = "assets/images/welcome_image1.png";
 const welcomePageImage2 = "assets/images/welcome_image2.png";
 const welcomePageImage3 = "assets/images/welcome_image3.png";
 const welcomePageImage4 = "assets/images/welcome_image4.png";
+const appLogoSmall = "assets/icons/app_logo_small.png";
 
 ///Text Styles
 final mainTextStyle = GoogleFonts.tajawal();
@@ -16,3 +17,6 @@ final headerTextStyle = mainTextStyle.copyWith(
 
 final subTextStyle = mainTextStyle.copyWith(
     fontSize: 14, fontWeight: FontWeight.w400, color: themeTextColor);
+
+final loginOptionTextStyle =
+    mainTextStyle.copyWith(fontWeight: FontWeight.w800, fontSize: 18,color:backgroundColor);
