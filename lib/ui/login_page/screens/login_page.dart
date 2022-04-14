@@ -11,6 +11,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -77,16 +78,18 @@ class LoginPage extends StatelessWidget {
                                     style: headerTextStyle)),
                             Container(
                               width: screenSize.width * 0.8,
-                              margin:
-                                  const EdgeInsets.only(top: 20, bottom: 20),
+                              margin: const EdgeInsets.only(
+                                top: 10,
+                              ),
                               child: Text("Sign in with your account",
                                   style: subTextStyle),
                             ),
                             textFieldLabelText(screenSize, "Username"),
                             Container(
                               width: screenSize.width * 0.8,
-                              margin:
-                                  const EdgeInsets.only(top: 10, bottom: 20),
+                              margin: const EdgeInsets.only(
+                                top: 10,
+                              ),
                               child: const TextFieldWidget(
                                 hintText: 'jonathandavis@gmail.com',
                               ),
@@ -94,11 +97,54 @@ class LoginPage extends StatelessWidget {
                             textFieldLabelText(screenSize, "Password"),
                             Container(
                               width: screenSize.width * 0.8,
-                              margin:
-                                  const EdgeInsets.only(top: 10, bottom: 20),
+                              margin: const EdgeInsets.only(
+                                top: 10,
+                              ),
                               child: const TextFieldWidget(
                                 hintText: "Password",
                               ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin:const EdgeInsets.only(top: 10),
+                                height: 60,
+                                width: screenSize.width * 0.8,
+                                decoration: const BoxDecoration(
+                                  color: themeMainColor,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(12.0),
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "LOGIN",
+                                    style: loginOptionTextStyle.copyWith(
+                                        fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Center(
+                              child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Forgot your password?",
+                                      style: subTextStyle,
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: TextButton(
+                                        child: Text(
+                                          "Reset here",
+                                          style: themeColorTextStyleSmall,
+                                        ),
+                                        onPressed: () {},
+                                      ),
+                                    ),
+                                  ]),
                             ),
                           ],
                         ),
@@ -117,7 +163,9 @@ class LoginPage extends StatelessWidget {
   Container textFieldLabelText(Size screenSize, String labelName) {
     return Container(
       width: screenSize.width * 0.8,
-      margin: const EdgeInsets.only(top: 20, bottom: 20),
+      margin: const EdgeInsets.only(
+        top: 10,
+      ),
       child: Text(labelName, style: subTextStyle),
     );
   }

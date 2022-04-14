@@ -18,5 +18,7 @@ final headerTextStyle = mainTextStyle.copyWith(
 final subTextStyle = mainTextStyle.copyWith(
     fontSize: 14, fontWeight: FontWeight.w400, color: themeTextColor);
 
-final loginOptionTextStyle =
-    mainTextStyle.copyWith(fontWeight: FontWeight.w800, fontSize: 18,color:backgroundColor);
+final loginOptionTextStyle = mainTextStyle.copyWith(
+    fontWeight: FontWeight.w800, fontSize: 18, color: backgroundColor);
+final themeColorTextStyleSmall = mainTextStyle.copyWith(
+    fontWeight: FontWeight.w500, fontSize: 14, color: themeMainColor);

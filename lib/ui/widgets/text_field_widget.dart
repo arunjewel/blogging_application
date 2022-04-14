@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class TextFieldWidget extends StatelessWidget {
   final bool obscureText;
   final String hintText;
@@ -14,9 +15,7 @@ class TextFieldWidget extends StatelessWidget {
     return TextField(
       obscureText: obscureText,
       obscuringCharacter: "*",
-      decoration: InputDecoration(
-        hintText: hintText,
-      ),
+      decoration: InputDecoration(hintText: hintText, focusColor: Colors.red),
     );
   }
 }
