@@ -2,8 +2,9 @@ import 'package:blogging_application/core/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/colors.dart';
-import '../../../core/utils.dart';
+import '../../../../core/colors.dart';
+import '../../../../core/constants.dart';
+import '../../../../core/utils.dart';
 import '../../login_page/screens/login_page.dart';
 import '../widgets/welcome_page_image_card.dart';
 

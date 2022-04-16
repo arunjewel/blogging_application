@@ -1,9 +1,11 @@
+import 'package:blogging_application/core/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../core/colors.dart';
-import '../../../core/constants.dart';
-import '../../widgets/text_field_widget.dart';
+import '../../../../core/colors.dart';
+import '../../../../core/constants.dart';
+import '../../../widgets/text_field_widget.dart';
+import '../../home_page/screens/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -106,7 +108,9 @@ class LoginPage extends StatelessWidget {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                toPage(context, HomePage());
+                              },
                               child: Container(
                                 margin:const EdgeInsets.only(top: 10),
                                 height: 60,
