@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../core/colors.dart';
 import '../../../core/constants.dart';
@@ -146,6 +147,19 @@ class LoginPage extends StatelessWidget {
                                     ),
                                   ]),
                             ),
+                            Text(
+                              "OR SIGN IN WITH",
+                              style: subTextStyle.copyWith(
+                                  fontSize: 12),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                fbLogoSmall,
+                                color: themeMainColor,
+                            ),
+                            ],)
                           ],
                         ),
                       ),

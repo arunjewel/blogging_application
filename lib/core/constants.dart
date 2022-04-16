@@ -8,6 +8,7 @@ const welcomePageImage2 = "assets/images/welcome_image2.png";
 const welcomePageImage3 = "assets/images/welcome_image3.png";
 const welcomePageImage4 = "assets/images/welcome_image4.png";
 const appLogoSmall = "assets/icons/app_logo_small.png";
+const fbLogoSmall="assets/icons/fblogo.svg";
 
 ///Text Styles
 final mainTextStyle = GoogleFonts.tajawal();
