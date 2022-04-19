@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
 import '../widgets/bottom_nav_bar_widget.dart';
@@ -20,19 +18,48 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-          Container(
-            margin: const EdgeInsets.all(5),
-            alignment: Alignment.centerLeft,
-            child: Text(
+            Container(
+              margin: const EdgeInsets.all(5),
+              alignment: Alignment.centerLeft,
+              child: Text(
                 'Explore today’s',
                 style: headerTextStyle,
               ),
-          ),
+            ),
             const StoriesWidget(),
-
           ],
         ),
       ),
+      // bottomNavigationBar: const BottomNavBarWidget(),
+
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: SizedBox(
+          height: 70,
+          width: 70,
+          child: ValueListenableBuilder(
+              valueListenable: indexChangeNotifier,
+              builder: (context, int newIndex, _) {
+                return FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  elevation: 1,
+                  onPressed: () {
+                    indexChangeNotifier.value = 2;
+                  },
+                  child: Container(
+                    height: 75,
+                    width: 75,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white, width: 4),
+                        shape: BoxShape.circle,
+                        color: themeMainColor),
+                    child: const Icon(Icons.person, size: 40),
+                  ),
+                );
+              }),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const BottomNavBarWidget(),
     );
   }
@@ -54,7 +81,7 @@ class StoriesWidget extends StatelessWidget {
         itemCount: 15,
         itemBuilder: (BuildContext context, int index) => Container(
             margin: EdgeInsets.all(3),
-            decoration:  const BoxDecoration(
+            decoration: const BoxDecoration(
               // color: Colors.blue,
               borderRadius: BorderRadius.all(
                 Radius.circular(12.0),

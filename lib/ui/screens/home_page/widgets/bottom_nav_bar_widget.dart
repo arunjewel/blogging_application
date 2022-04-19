@@ -30,9 +30,13 @@ class BottomNavBarWidget extends StatelessWidget {
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.search), label: "Article"),
+                    icon: Icon(Icons.menu_book_rounded), label: "Article"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.download), label: "Search"),
+                    icon: Icon(Icons.person), label: ""),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.search), label: "Search"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.menu), label: "Menu"),
               ]);
         });
   }
