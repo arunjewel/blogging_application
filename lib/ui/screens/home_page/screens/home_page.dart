@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
+import '../../../../core/utils.dart';
+import '../../stories/screens/stories_widget.dart';
 import '../widgets/bottom_nav_bar_widget.dart';
 import '../widgets/home_appbar_widget.dart';
 import '../widgets/homepage_images_card.dart';
@@ -30,7 +32,10 @@ class HomePage extends StatelessWidget {
             ),
             const StoriesWidget(),
             SizedBox(
-              height: 270.0,
+              height: deviceWidth(context) * 0.05,
+            ),
+            SizedBox(
+              height: deviceWidth(context) * 0.75,
               child: ListView.builder(
                   physics: const ClampingScrollPhysics(),
                   shrinkWrap: true,
@@ -79,50 +84,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class StoriesWidget extends StatelessWidget {
-  const StoriesWidget({
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70.0,
-      child: ListView.builder(
-        physics: const ClampingScrollPhysics(),
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemCount: 15,
-        itemBuilder: (BuildContext context, int index) => Container(
-            margin: const EdgeInsets.all(3),
-            decoration: const BoxDecoration(
-              // color: Colors.blue,
-              borderRadius: BorderRadius.all(
-                Radius.circular(12.0),
-              ),
-              gradient: LinearGradient(
-                  colors: [themeMainColor, Colors.blue],
-                  begin: FractionalOffset(0.5, 0.5),
-                  end: FractionalOffset(0.9, 0.0),
-                  stops: [0.0, 1.0],
-                  tileMode: TileMode.clamp),
-            ),
-            child: Container(
-              margin: const EdgeInsets.all(2),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12.0),
-                ),
-              ),
-              child: Center(
-                child: Image.asset(
-                  userDemoDP,
-                  // color: themeMainColor,
-                ),
-              ),
-            )),
-      ),
-    );
-  }
-}
+
+

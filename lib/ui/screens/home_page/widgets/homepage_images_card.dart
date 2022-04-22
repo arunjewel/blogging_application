@@ -17,7 +17,7 @@ class HomePageImageCard extends StatelessWidget {
     return Stack(children: [
       Container(
         width: deviceHeight(context) * 0.32,
-        height: deviceWidth(context) * 0.5,
+        height: deviceWidth(context) * 0.75,
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           image:
