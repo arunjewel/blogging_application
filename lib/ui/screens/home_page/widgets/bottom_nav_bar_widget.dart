@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/colors.dart';
+import '../../../../core/constants.dart';
+import 'svg_icon_widget.dart';
 
 
 
@@ -27,17 +29,19 @@ class BottomNavBarWidget extends StatelessWidget {
                 color: themeMainColor,
               ),
               unselectedIconTheme: const IconThemeData(color: Colors.grey),
-              items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              items:  const [
+                BottomNavigationBarItem(icon: SvgIconWidget(iconPath: homeIcon), label: "Home"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.menu_book_rounded), label: "Article"),
+                    icon: SvgIconWidget(iconPath: articleIcon), label: "Article"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person), label: ""),
+                    icon:SvgIconWidget(iconPath: homeIcon), label: ""),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.search), label: "Search"),
+                    icon:SvgIconWidget(iconPath: searchIcon), label: "Search"),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.menu), label: "Menu"),
+                    icon: SvgIconWidget(iconPath: menuIcon), label: "Menu"),
               ]);
         });
   }
 }
+
+

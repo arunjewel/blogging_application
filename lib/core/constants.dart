@@ -14,6 +14,11 @@ const userDemoDP2="assets/images/user2.png";
 const userDemoDP3="assets/images/user3.png";
 const userDemoDP4="assets/images/user4.png";
 const notificationIcon="assets/icons/notification.svg";
+const homeIcon="assets/icons/Home.svg";
+const articleIcon="assets/icons/Articles.svg";
+const searchIcon="assets/icons/Search.svg";
+const menuIcon="assets/icons/Menu.svg";
+
 ///Text Styles
 final mainTextStyle = GoogleFonts.tajawal();
 
