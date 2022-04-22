@@ -80,7 +80,7 @@ class StoriesWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 15,
         itemBuilder: (BuildContext context, int index) => Container(
-            margin: EdgeInsets.all(3),
+            margin: const EdgeInsets.all(3),
             decoration: const BoxDecoration(
               // color: Colors.blue,
               borderRadius: BorderRadius.all(

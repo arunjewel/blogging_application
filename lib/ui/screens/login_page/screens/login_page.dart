@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
+              //  const Spacer(),
               Container(
                 width: screenSize.width,
                 height: screenSize.height * 0.75,
@@ -112,7 +112,7 @@ class LoginPage extends StatelessWidget {
                                 toPage(context, HomePage());
                               },
                               child: Container(
-                                margin:const EdgeInsets.only(top: 10),
+                                margin: const EdgeInsets.only(top: 10),
                                 height: 60,
                                 width: screenSize.width * 0.8,
                                 decoration: const BoxDecoration(
@@ -153,17 +153,17 @@ class LoginPage extends StatelessWidget {
                             ),
                             Text(
                               "OR SIGN IN WITH",
-                              style: subTextStyle.copyWith(
-                                  fontSize: 12),
+                              style: subTextStyle.copyWith(fontSize: 12),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SvgPicture.asset(
-                                fbLogoSmall,
-                                color: themeMainColor,
-                            ),
-                            ],)
+                                  fbLogoSmall,
+                                  color: themeMainColor,
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ),
