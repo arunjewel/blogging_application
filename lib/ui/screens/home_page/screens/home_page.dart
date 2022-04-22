@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../application/bloc/bottom_nav_bar_bloc.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/utils.dart';
@@ -56,26 +58,26 @@ class HomePage extends StatelessWidget {
         child: SizedBox(
           height: 70,
           width: 70,
-          child: ValueListenableBuilder(
-              valueListenable: indexChangeNotifier,
-              builder: (context, int newIndex, _) {
-                return FloatingActionButton(
-                  backgroundColor: Colors.transparent,
-                  elevation: 1,
-                  onPressed: () {
-                    indexChangeNotifier.value = 2;
-                  },
-                  child: Container(
-                    height: 75,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white, width: 4),
-                        shape: BoxShape.circle,
-                        color: themeMainColor),
-                    child: const Icon(Icons.person, size: 40),
-                  ),
-                );
-              }),
+          child: BlocBuilder<BottomNavBarBloc, BottomNavBarState>(
+              builder: (context, state) {
+            return FloatingActionButton(
+              backgroundColor: Colors.transparent,
+              elevation: 1,
+              onPressed: () {
+                BlocProvider.of<BottomNavBarBloc>(context)
+                    .add(const BottomNavBarEvent.changeTab(newIndex: 2));
+              },
+              child: Container(
+                height: 75,
+                width: 75,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white, width: 4),
+                    shape: BoxShape.circle,
+                    color: themeMainColor),
+                child: const Icon(Icons.person, size: 40),
+              ),
+            );
+          }),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -83,7 +85,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-
-

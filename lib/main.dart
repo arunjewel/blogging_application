@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'application/bloc/bottom_nav_bar_bloc.dart';
+import 'core/di/injectable.dart';
 import 'ui/screens/welcome_screen/screens/welcome_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureInjection();
   runApp(const MyApp());
 }
 
@@ -23,12 +28,16 @@ class MyApp extends StatelessWidget {
             statusBarBrightness:
                 Brightness.dark) /* set Status bar icon color in iOS. */
         );
-    return MaterialApp(
-      title: 'Blogging App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const WelcomeScreen(),
-    );
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => getIt<BottomNavBarBloc>()),
+        ],
+        child: MaterialApp(
+          title: 'Blogging App',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: const WelcomeScreen(),
+        ));
   }
 }
