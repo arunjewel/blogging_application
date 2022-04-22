@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
 import '../widgets/bottom_nav_bar_widget.dart';
 import '../widgets/home_appbar_widget.dart';
+import '../widgets/homepage_images_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,6 +29,18 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const StoriesWidget(),
+            SizedBox(
+              height: 270.0,
+              child: ListView.builder(
+                  physics: const ClampingScrollPhysics(),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 15,
+                  itemBuilder: (context, i) {
+                    return const HomePageImageCard(
+                        imagePath: welcomePageImage2);
+                  }),
+            ),
           ],
         ),
       ),
