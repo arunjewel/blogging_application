@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../application/bloc/bottom_nav_bar_bloc.dart';
+import '../../../../application/bottom_nav_bar/bottom_nav_bar_bloc.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
 import 'svg_icon_widget.dart';

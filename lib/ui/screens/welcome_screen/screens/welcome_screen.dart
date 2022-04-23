@@ -93,26 +93,26 @@ class WelcomeScreen extends StatelessWidget {
                             ),
                             const Spacer(),
                             GestureDetector(
-                              onTap: (){
-                                toPage(context,const LoginPage());
+                              onTap: () {
+                                toPage(context, const LoginPage());
                               },
-                              child:
-                            Container(
-                              height: 60,
-                              width: 88,
-                              decoration: const BoxDecoration(
-                                color: themeMainColor,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12.0),
+                              child: Container(
+                                height: 60,
+                                width: 88,
+                                decoration: const BoxDecoration(
+                                  color: themeMainColor,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(12.0),
+                                  ),
+                                ),
+                                child: const Center(
+                                  child: Icon(
+                                    CupertinoIcons.arrow_right,
+                                    color: backgroundColor,
+                                  ),
                                 ),
                               ),
-                              child: const Center(
-                                child: Icon(
-                                  CupertinoIcons.arrow_right,
-                                  color: backgroundColor,
-                                ),
-                              ),
-                            ),),
+                            ),
                           ],
                         ),
                       ),

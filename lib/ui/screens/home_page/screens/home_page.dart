@@ -1,7 +1,8 @@
+import 'package:blogging_application/application/blog_list/blog_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../application/bloc/bottom_nav_bar_bloc.dart';
+import '../../../../application/bottom_nav_bar/bottom_nav_bar_bloc.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/utils.dart';
@@ -15,6 +16,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      BlocProvider.of<BlogListBloc>(context)
+          .add(const BlogListEvent.getBlogslist());
+    });
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(120), // Set this height

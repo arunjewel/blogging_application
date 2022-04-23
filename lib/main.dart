@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'application/bloc/bottom_nav_bar_bloc.dart';
+import 'application/blog_list/blog_list_bloc.dart';
+import 'application/bottom_nav_bar/bottom_nav_bar_bloc.dart';
 import 'core/di/injectable.dart';
 import 'ui/screens/welcome_screen/screens/welcome_screen.dart';
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => getIt<BottomNavBarBloc>()),
+          BlocProvider(create: (context) => getIt<BlogListBloc>()),
         ],
         child: MaterialApp(
           title: 'Blogging App',

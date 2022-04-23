@@ -1,4 +1,4 @@
-part of 'bottom_nav_bar_bloc.dart';
+part of '../bottom_nav_bar/bottom_nav_bar_bloc.dart';
 
 @freezed
 class BottomNavBarEvent with _$BottomNavBarEvent {

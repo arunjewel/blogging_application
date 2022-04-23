@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class WelcomePageImageCard extends StatelessWidget {
   final String imagePath;
   final double? imageWidth;
@@ -17,7 +18,7 @@ class WelcomePageImageCard extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           image:
-          DecorationImage(fit: BoxFit.cover, image: AssetImage(imagePath)),
+              DecorationImage(fit: BoxFit.cover, image: AssetImage(imagePath)),
           borderRadius: const BorderRadius.all(Radius.circular(20.0)),
           color: Colors.white,
           boxShadow: const [
